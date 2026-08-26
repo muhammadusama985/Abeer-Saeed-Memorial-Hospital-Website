@@ -934,7 +934,7 @@
   color: #f59e0b;
 }
 
-[object Object].doctor-name {
+.doctor-name {
   font-family: var(--font-display);
   color: var(--color-text);
   margin-bottom: .3rem;
