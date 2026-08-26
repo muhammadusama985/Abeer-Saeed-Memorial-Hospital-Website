@@ -1,0 +1,240 @@
+/* ===== Design Tokens ===== */
+:root {
+  /* Brand palette - light, professional medical */
+  --color-bg: #ffffff;
+  --color-bg-soft: #f8fafc;
+  --color-bg-tint: #f1f5f9;
+
+  --color-primary: #0ea5e9;        /* sky-500 */
+  --color-primary-dark: #0284c7;   /* sky-600 */
+  --color-primary-darker: #0369a1; /* sky-700 */
+  --color-primary-soft: #e0f2fe;   /* sky-100 */
+  --color-primary-softer: #f0f9ff; /* sky-50 */
+
+  --color-accent: #10b981;         /* emerald-500 - health/wellness */
+  --color-accent-dark: #059669;
+  --color-accent-soft: #d1fae5;
+
+  --color-text: #0f172a;           /* slate-900 */
+  --color-text-soft: #334155;      /* slate-700 */
+  --color-text-muted: #64748b;     /* slate-500 */
+  --color-text-light: #94a3b8;     /* slate-400 */
+
+  --color-border: #cbd5e1;         /* slate-300 - more visible */
+  --color-border-soft: #e2e8f0;    /* slate-200 */
+
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.07);
+  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.10);
+  --shadow-primary: 0 12px 30px rgba(14, 165, 233, 0.25);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  --font-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+
+  --container: 1200px;
+
+  /* Map marker pulse */
+  --marker-red: #ef4444;
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+ul { list-style: none; }
+
+/* ===== Layout helpers ===== */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-soft);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-title span {
+  color: var(--color-primary-dark);
+  font-style: italic;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 620px;
+  margin-bottom: 3rem;
+}
+
+.section-head {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-head .section-subtitle { margin-bottom: 0; }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  box-shadow: var(--shadow-primary);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(14, 165, 233, 0.35);
+}
+
+.btn-outline {
+  background: white;
+  color: var(--color-primary-dark);
+  border: 1.5px solid var(--color-primary-soft);
+}
+.btn-outline:hover {
+  background: var(--color-primary-softer);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  color: var(--color-text);
+  padding: 0.6rem 1rem;
+}
+.btn-ghost:hover { color: var(--color-primary-dark); }
+
+/* ===== Animations ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.55); }
+  70% { box-shadow: 0 0 0 22px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+@keyframes pulseRing {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.fade-up { animation: fadeUp 0.8s ease both; }
+
+/* ===== Leaflet map custom marker ===== */
+.hospital-marker {
+  position: relative;
+  width: 36px;
+  height: 36px;
+}
+.hospital-marker .pin {
+  position: absolute;
+  inset: 0;
+  background: var(--marker-red);
+  border: 3px solid #fff;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 6px 14px rgba(239, 68, 68, 0.45);
+}
+.hospital-marker .pulse {
+  position: absolute;
+  inset: 0;
+  background: var(--marker-red);
+  border-radius: 50%;
+  animation: pulseRing 1.8s ease-out infinite;
+}
+.hospital-marker .dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Make Leaflet attribution subtle but readable on light theme */
+.leaflet-container {
+  font-family: var(--font-sans);
+}
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.85) !important;
+  font-size: 10px !important;
+}
+.leaflet-bar a {
+  background: #fff !important;
+  color: #334155 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+.leaflet-bar a:hover { background: #f1f5f9 !important; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .section { padding: 4rem 0; }
+  .section-head { margin-bottom: 2.5rem; }
+}
