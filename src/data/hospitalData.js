@@ -96,7 +96,7 @@ export const doctors = [
     image: '/doctors/Dr.Khalid Sehzad.jpg',
   },
   {
-    name: 'Dr. Shoib Khan',
+    name: 'Dr. Shoaib Khan',
     specialty: 'Dietitian',
     experience: '20 years',
     rating: 4.8,
