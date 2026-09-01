@@ -914,6 +914,51 @@
   padding: 1.4rem 1.5rem 1.6rem;
 }
 
+.doctor-about {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.doctor-qualification {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-bottom: 1rem;
+}
+.doctor-qualification strong {
+  color: var(--color-text-soft);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.doctor-qualification span {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.doctor-hours {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-dark);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.doctor-hours svg {
+  flex-shrink: 0;
+}
+
+.doctor-card-foot {
+  margin-top: auto;
+  border-top: 1px solid var(--color-border-soft);
+  padding-top: 1rem;
+}
+
 .doctor-rating {
   border-radius: var(--radius-full);
   color: var(--color-text);
@@ -1948,4 +1993,364 @@ a.contact-card:hover {
   .video-btn-label { display: none; }
   .video-controls-center { display: none; }
   .video-controls { padding: 0.7rem 0.75rem 0.75rem; }
+}
+
+/* ============================================================
+   APPOINTMENT PAGE
+   ============================================================ */
+.appointment-section {
+  background: linear-gradient(#f0f9ff 0%, #fff 100%);
+}
+
+.appointment-head {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.appointment-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.appointment-title span {
+  color: var(--color-primary-dark);
+  font-style: italic;
+}
+.appointment-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  max-width: 600px;
+}
+
+.appointment-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+.appointment-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 1.1rem;
+  background: white;
+  border: 1.5px solid var(--color-border-soft);
+  border-radius: var(--radius-full);
+  color: var(--color-text-soft);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.appointment-step.is-done {
+  border-color: var(--color-primary-soft);
+  background: var(--color-primary-softer);
+  color: var(--color-primary-dark);
+}
+.appointment-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.appointment-step-line {
+  width: 34px;
+  height: 2px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.appointment-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.appointment-panel {
+  background: white;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 1.6rem;
+  position: sticky;
+  top: 100px;
+}
+.appointment-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+}
+.appointment-panel-head svg {
+  color: var(--color-primary);
+}
+
+.doctor-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.doctor-selector-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-align: left;
+  padding: 0.75rem 0.9rem;
+  background: var(--color-bg-soft);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.doctor-selector-card:hover {
+  border-color: var(--color-primary-soft);
+  background: white;
+}
+.doctor-selector-card.is-active {
+  border-color: var(--color-primary);
+  background: var(--color-primary-softer);
+  box-shadow: var(--shadow-primary);
+}
+.doctor-selector-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--color-primary-soft);
+  flex-shrink: 0;
+  background: white;
+}
+.doctor-selector-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.doctor-selector-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+  min-width: 0;
+}
+.doctor-selector-body strong {
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.doctor-selector-spec {
+  color: var(--color-primary-dark);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.doctor-selector-hours {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+.doctor-selector-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  color: white;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.doctor-selector-card.is-active .doctor-selector-check {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.doctor-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--color-primary-softer), var(--color-accent-soft));
+  border-radius: var(--radius-md);
+}
+.doctor-summary-img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  flex-shrink: 0;
+  background: white;
+}
+.doctor-summary-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+.doctor-summary-body strong {
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.doctor-summary-body span {
+  color: var(--color-text-soft);
+  font-size: 0.8rem;
+}
+
+.appointment-form {
+  background: white;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 2.4rem;
+}
+
+.slot-range {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.time-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+.time-slot {
+  padding: 0.6rem 0.4rem;
+  border: 1.5px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-soft);
+  color: var(--color-text-soft);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.15s;
+}
+.time-slot:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+  background: var(--color-primary-softer);
+}
+.time-slot.is-active {
+  border-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: white;
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-2px);
+}
+
+.appointment-success {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  color: var(--color-accent-dark);
+}
+.appointment-success svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.appointment-success div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.appointment-success strong {
+  color: var(--color-accent-dark);
+  font-size: 0.98rem;
+}
+.appointment-success span {
+  color: var(--color-text-soft);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 980px) {
+  .appointment-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .appointment-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 520px) {
+  .time-slot-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================================
+   WHATSAPP FLOATING BUTTON
+   ============================================================ */
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 100;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.55);
+}
+.whatsapp-float-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: var(--color-text);
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 0.8rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.whatsapp-float-tooltip:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: var(--color-text);
+}
+.whatsapp-float:hover .whatsapp-float-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }

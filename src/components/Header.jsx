@@ -87,7 +87,7 @@ export default function Header() {
           </nav>
 
           <div className="header-actions">
-            <Link to="/contact" className="btn btn-primary header-cta">
+            <Link to="/appointment" className="btn btn-primary header-cta">
               <Icon name="phone" size={16} />
               <span>Book Appointment</span>
             </Link>

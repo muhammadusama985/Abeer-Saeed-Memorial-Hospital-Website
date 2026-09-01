@@ -40,7 +40,7 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Patients</h4>
           <ul>
-            <li><Link to="/contact">Book Appointment</Link></li>
+            <li><Link to="/appointment">Book Appointment</Link></li>
             <li><Link to="/contact">Insurance</Link></li>
             <li><Link to="/contact">Visitor Information</Link></li>
             <li><Link to="/contact">Patient Portal</Link></li>

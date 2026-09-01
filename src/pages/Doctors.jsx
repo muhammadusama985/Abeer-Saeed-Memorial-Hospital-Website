@@ -25,7 +25,7 @@ export default function Doctors() {
               confirm your visit. Walk-ins are welcome for emergencies.
             </p>
             <div style={{ display: 'flex', gap: '0.9rem', flexWrap: 'wrap' }}>
-              <Link to="/contact" className="btn btn-primary">
+              <Link to="/appointment" className="btn btn-primary">
                 <span>Book Online</span>
               </Link>
               <a href="tel:03365554447" className="btn btn-outline">

@@ -8,6 +8,8 @@ import Services from './pages/Services'
 import Doctors from './pages/Doctors'
 import Stories from './pages/Stories'
 import Contact from './pages/Contact'
+import Appointment from './pages/Appointment'
+import WhatsAppButton from './components/WhatsAppButton'
 import './App.css'
 
 function ScrollToTop() {
@@ -31,10 +33,12 @@ function App() {
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/appointment" element={<Appointment />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

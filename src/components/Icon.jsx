@@ -88,6 +88,13 @@ const icons = {
   quote: (
     <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 4-1 6-3 6zm12 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 4-1 6-3 6z" />
   ),
+  calendar: (
+    <>
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" strokeWidth="1.5" fill="none" />
+      <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
+    </>
+  ),
 }
 
 export default function Icon({ name, size = 24, stroke = false, className = '', style }) {

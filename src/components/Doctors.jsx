@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Icon from './Icon'
 import { doctors } from '../data/hospitalData'
 
@@ -39,10 +40,43 @@ export default function Doctors() {
             <article className="doctor-card" key={d.name}>
               <div className="doctor-img-wrap">
                 <img src={d.image} alt={d.name} className="doctor-img" />
+                <div className="doctor-rating">
+                  <Icon name="star" size={14} />
+                  <span>{d.rating}</span>
+                </div>
               </div>
               <div className="doctor-body">
                 <h3 className="doctor-name">{d.name}</h3>
                 <div className="doctor-specialty">{d.specialty}</div>
+                <p className="doctor-about">{d.about}</p>
+
+                <div className="doctor-meta">
+                  <span className="doctor-meta-item">
+                    <Icon name="clock" size={15} stroke />
+                    <span>{d.experience}</span>
+                  </span>
+                  <span className="doctor-meta-item">
+                    <Icon name="heart" size={15} stroke />
+                    <span>{d.patients} patients</span>
+                  </span>
+                </div>
+
+                <div className="doctor-qualification">
+                  <strong>{d.qualification}</strong>
+                  <span>{d.education}</span>
+                </div>
+
+                <div className="doctor-hours">
+                  <Icon name="clock" size={16} stroke />
+                  <span>{d.hours}</span>
+                </div>
+
+                <div className="doctor-card-foot">
+                  <Link to="/appointment" className="doctor-book">
+                    <span>Book Appointment</span>
+                    <Icon name="arrow" size={16} stroke />
+                  </Link>
+                </div>
               </div>
             </article>
           ))}
